@@ -1,0 +1,12 @@
+# Java build outputs
+*.class
+out/
+bin/
+
+# IDE/editor
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store

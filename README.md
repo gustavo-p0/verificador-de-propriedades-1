@@ -1,0 +1,3 @@
+# JAVA Verificador de propriedades 1
+
+A presente atividade consiste em testar verificadores de um grafo não direcionado sobre os seguintes conceitos: simples, regular, completo, nulo, linear. Para cada verificação verdadeira sua solução deverá responder com 1 e cada verificação falsa com 0. Por exemplo, a saída 1 1 0 0 0 significa que o grafo é simples, não é regular, não é completo, é nulo e não é linear, nesta ordem.
