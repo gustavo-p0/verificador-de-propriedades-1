@@ -69,8 +69,42 @@ class Graph {
     public boolean isNullish(){
         return checkUpperTriangle((n, m) -> matrix[n][m] != -1);
     }
-    public boolean isLinear(){
-        return countVerticesWithDegree(1) == 2 && countVerticesWithDegree(2) == vertices - 2;
+    public boolean isLinear() {
+        if (vertices == 1) return true;
+
+        if (countVerticesWithDegree(1) != 2 || countVerticesWithDegree(2) != vertices - 2) {
+            return false;
+        }
+
+        int startNode = -1;
+        for (int i = 0; i < vertices; i++) {
+            if (degree(i) == 1) {
+                startNode = i;
+                break; 
+            }
+        }
+
+        if (startNode == -1) return false;
+
+        boolean[] visited = new boolean[vertices];
+        int current = startNode;
+        int visitedCount = 0;
+
+        while (current != -1) {
+            visited[current] = true;
+            visitedCount++;
+            int next = -1;
+
+            for (int i = 0; i < vertices; i++) {
+                if (matrix[current][i] != -1 && !visited[i]) {
+                    next = i;
+                    break; 
+                }
+            }
+            current = next;
+        }
+
+        return visitedCount == vertices;
     }
 }
 
